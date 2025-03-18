@@ -27,9 +27,9 @@ export async function GET(
 
     // Transform the response to match the BlogPost interface
     const blogPost: BlogPost = {
-      id: findBlogById.objectId, // Use the correct property from Backendless
-      title: findBlogById.title,
-      content: findBlogById.content,
+      id: findBlogById.objectId ?? "", // Use the correct property from Backendless
+      title: findBlogById.title ?? "Untitled",
+      content: findBlogById.content ?? "no content available",
     };
 
     // Return the transformed blog post
