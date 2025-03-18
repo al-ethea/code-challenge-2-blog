@@ -76,9 +76,9 @@ export default function CategoriesPage() {
               Culture
             </h3>
             <p className="text-[#0F3460] text-sm">
-              Learn about Japan's rich culture, traditions, and history. From
+              {`Learn about Japan's rich culture, traditions, and history. From
               festivals to etiquette, understand the context behind the
-              language.
+              language.`}
             </p>
           </div>
 

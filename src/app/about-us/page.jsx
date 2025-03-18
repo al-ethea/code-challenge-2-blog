@@ -51,10 +51,10 @@ export default function AboutUsPage() {
             advanced concepts, we’re here to guide you every step of the way.`}
           </p>
           <p className="text-white text-lg leading-relaxed mb-8">
-            Our goal is simple: to make learning Japanese fun, accessible, and
+            {`Our goal is simple: to make learning Japanese fun, accessible, and
             engaging for all learners. From foundational grammar and vocabulary
             to cultural insights, we believe that learning a language is not
-            just about mastering words—it's about embracing a whole new culture.
+            just about mastering words—it's about embracing a whole new culture.`}
           </p>
 
           {/* Author Profiles */}
