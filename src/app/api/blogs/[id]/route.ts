@@ -13,10 +13,10 @@ interface BlogPost {
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ): Promise<NextResponse<BlogPost | { error: string }>> {
   try {
-    const { id } = params;
+    const { id } = await context.params;
 
     // Fetch the blog post by ID from Backendless
     const findBlogById = await Backendless.Data.of("blogs").findById(id);
