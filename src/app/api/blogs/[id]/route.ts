@@ -22,7 +22,7 @@ export async function GET(
     const findBlogById = await Backendless.Data.of("blogs").findById(id);
 
     // If no blog post is found, return a 404 error
-    if (!findBlogById) {
+    if (!findBlogById || !("objectId" in findBlogById)) {
       return NextResponse.json(
         { error: "Blog post not found" },
         { status: 404 }
