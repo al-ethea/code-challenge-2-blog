@@ -3,9 +3,19 @@ import axios from "axios";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
+// Interface for the expected BlogPost structure
+interface BlogPost {
+  id: string;
+  title: string;
+  content: string;
+  category: string;
+  author: string;
+  created: Date;
+}
+
 export default function Post() {
   const params = useParams(); // Get the slug ID from the URL
-  const [post, setPost] = useState(null);
+  const [post, setPost] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState(true); // Loading state
 
   const handleGetPost = async () => {
