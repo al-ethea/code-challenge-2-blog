@@ -20,9 +20,7 @@ export default function Post() {
 
   const handleGetPost = async () => {
     try {
-      const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL}/blogs/${params.id}`
-      );
+      const response = await axios.get(`/api/blogs/${params.id}`);
       // console.log(response.data);
       setPost(response.data); // Set the fetched post data
     } catch (error) {

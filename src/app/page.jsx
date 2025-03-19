@@ -14,9 +14,7 @@ export default function Home() {
   // Fetch blog posts
   const handleGetBlog = async () => {
     try {
-      const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL}/blogs`
-      );
+      const response = await axios.get(`/api/blogs`);
       setBlog(response.data.data);
     } catch (error) {
       console.log(error);
