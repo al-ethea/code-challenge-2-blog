@@ -3,9 +3,12 @@ import { NextRequest, NextResponse } from "next/server";
 
 // Interface for the expected BlogPost structure
 interface BlogPost {
-  id: string;
+  objectId: string;
   title: string;
   content: string;
+  category: string;
+  author: string;
+  created: Date;
 }
 
 export async function GET(
@@ -28,9 +31,12 @@ export async function GET(
 
     // Assuming the Backendless object has fields `objectId`, `title`, and `content`
     const blogPost: BlogPost = {
-      id: findBlogById.objectId ?? "", // Ensure you use the correct property
-      title: findBlogById.title ?? "Untitled", // Use a fallback if necessary
-      content: findBlogById.content ?? "No content available", // Same here
+      objectId: (findBlogById as BlogPost).objectId ?? "", // Ensure you use the correct property
+      title: (findBlogById as BlogPost).title ?? "Untitled", // Use a fallback if necessary
+      content: (findBlogById as BlogPost).content ?? "No content available",
+      category: (findBlogById as BlogPost).category,
+      author: (findBlogById as BlogPost).author,
+      created: (findBlogById as BlogPost).created,
     };
 
     // Return the blog post as JSON with a 200 status
